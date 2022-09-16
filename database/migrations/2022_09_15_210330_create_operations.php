@@ -13,11 +13,14 @@ class CreateOperations extends Migration
             $table->timestamps();
             $table->string('type');
             $table->unsignedBigInteger('transaction_id');
-            $table->unsignedBigInteger('sum')->nullable();
+            $table->unsignedBigInteger('sum');
             $table->string('sender_type');
             $table->string('receiver_type');
-            $table->jsonb('sender')->default('{}');
-            $table->jsonb('receiver')->default('{}');
+            $table->jsonb('sender');
+            $table->jsonb('receiver');
+            $table->text('reason');
+            $table->jsonb('info');
+
         });
     }
 
